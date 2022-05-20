@@ -1,14 +1,16 @@
-import { Box, Text, Stack } from '@chakra-ui/react'
+import { Box, Text, Stack, Button } from '@chakra-ui/react'
 import type { BoxProps } from '@chakra-ui/react'
 
 type Props = {
   user_id: number
   user_name: string
+  handleDelete: (user_id: number) => void
 } & BoxProps
 
 export const UserCard: React.FC<Props> = ({
   user_id,
   user_name,
+  handleDelete,
   maxW = 350,
   p = 16,
   borderRadius = 8,
@@ -26,6 +28,9 @@ export const UserCard: React.FC<Props> = ({
       <Stack spacing={8}>
         <Text as='span'>User ID : {user_id}</Text>
         <Text as='span'>User Name : {user_name}</Text>
+        <Button colorScheme='red' onClick={() => handleDelete(user_id)}>
+          削除
+        </Button>
       </Stack>
     </Box>
   )

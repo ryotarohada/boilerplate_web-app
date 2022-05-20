@@ -6,7 +6,7 @@ import { useFetchUsers } from '@/services'
 import { useSeo } from '@/lib/seo'
 import { UserList } from '@/components/parts/UserList'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { addUser } from '@/services/user'
+import { addUser, deleteUser } from '@/services/user'
 
 const Index: NextPage = () => {
   const { DefaultSeo, NextSeo } = useSeo({
@@ -29,12 +29,22 @@ const Index: NextPage = () => {
     [onMutate],
   )
 
+  // TODO: 削除のたびにGETリクエストが走るのは良くないかも
+  const handleDelete = useCallback(
+    (user_id: number) => {
+      deleteUser({ id: user_id }).then(() => {
+        onMutate()
+      })
+    },
+    [onMutate],
+  )
+
   return (
     <Template>
       <DefaultSeo />
       <NextSeo />
       <Heading as='h1'>Welcome, Boilerplate_Web-Full-Stack!</Heading>
-      <UserList users={data} />
+      <UserList users={data} handleDelete={handleDelete} />
       <chakra.form onSubmit={handleSubmit(onSubmit)}>
         <Input {...register('name')} />
         <Button type='submit'>Add User</Button>

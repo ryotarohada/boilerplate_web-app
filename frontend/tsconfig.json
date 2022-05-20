@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/components/parts/ItemCard"
+    "src/components/parts/UserCard"
   ],
   "exclude": ["node_modules"]
 }
