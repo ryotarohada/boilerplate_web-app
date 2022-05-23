@@ -2,11 +2,10 @@
 
 Web App 開発用のテンプレート (front + api + db)
 
-フロントエンド & バックエンド共に ts-node を使用する
+フロント & サーバーサイドで TypeScript を採用。
 
-front: Next.js × ts
+front: Next.js × Chakra UI
 
-api: Express × ts × Docker
+api: Express × Docker
 
 DB: MySQL × Docker
-
