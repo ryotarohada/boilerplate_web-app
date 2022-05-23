@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { useCallback } from 'react'
-import { Heading, Button, useToast, chakra, Input } from '@chakra-ui/react'
+import { Button, useToast, chakra, Input } from '@chakra-ui/react'
 import { Template } from '@/components/templates'
 import { useFetchUsers } from '@/services'
 import { useSeo } from '@/lib/seo'
@@ -43,7 +43,6 @@ const Index: NextPage = () => {
     <Template>
       <DefaultSeo />
       <NextSeo />
-      <Heading as='h1'>Welcome, Boilerplate_Web-Full-Stack!</Heading>
       <UserList users={data} handleDelete={handleDelete} />
       <chakra.form onSubmit={handleSubmit(onSubmit)}>
         <Input {...register('name')} />
