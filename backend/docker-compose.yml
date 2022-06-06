@@ -2,23 +2,16 @@ version: "3"
 
 services:
   db:
-    build: ./db/
     container_name: "example_db"
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ./data"
+    image: "amazon/dynamodb-local:latest"
     volumes:
-      - ./db/init:/docker-entrypoint-initdb.d
-      - ./db/mysql:/var/lib/mysql
-    env_file: .env
+      - "./db/data:/home/dynamodblocal/data"
     ports:
-      - "3306:3306"
+      - "8000:8000"
     networks:
       - default
-    restart: always
-    environment:
-      MYSQL_HOST: $MYSQL_HOST
-      MYSQL_ROOT_USER: $MYSQL_ROOT_USER
-      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
-      MYSQL_USER: $MYSQL_USER
-      MYSQL_PASSWORD: $MYSQL_PASSWORD
+    working_dir: /home/dynamodblocal
   api:
     build: ./api/
     container_name: "example_api"
@@ -32,11 +25,9 @@ services:
     depends_on:
       - db
     environment:
-      MYSQL_HOST: $MYSQL_HOST
-      MYSQL_ROOT_USER: $MYSQL_ROOT_USER
-      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
-      MYSQL_USER: $MYSQL_USER
-      MYSQL_PASSWORD: $MYSQL_PASSWORD
+      AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+      DYNAMODB_REGION: $DYNAMODB_REGION
 
 networks:
   default:

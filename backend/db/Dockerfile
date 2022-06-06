@@ -1,8 +1,5 @@
-FROM mysql:5.7
+FROM amazon/dynamodb-local:latest
 
-EXPOSE 3306
+EXPOSE 4000
 
-COPY ./my.cnf /etc/mysql/conf.d/my.cnf
-COPY init/* /docker-entrypoint-initdb.d/
-
-CMD ["mysqld"]
+CMD ["-jar", "DynamoDBLocal.jar", "-sharedDb", "-dbPath", ".", "-optimizeDbBeforeStartup"]
