@@ -25,6 +25,8 @@ services:
     depends_on:
       - db
     environment:
+      API_PORT: $API_PORT
+      DATABASE_PORT: $DATABASE_PORT
       AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
       AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
       DYNAMODB_REGION: $DYNAMODB_REGION

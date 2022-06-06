@@ -1,9 +1,9 @@
 import { config, DynamoDB } from 'aws-sdk'
-import { PORT, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, DYNAMODB_REGION } from '@/lib/env'
+import { API_PORT, DATABASE_PORT, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, DYNAMODB_REGION } from '@/lib/env'
 
 export const database = () => {
   const dbConfig = {
-    endpoint: 'http://host.docker.internal:8000',
+    endpoint: 'http://host.docker.internal:' + DATABASE_PORT,
     region: DYNAMODB_REGION,
     accessKeyId: AWS_ACCESS_KEY_ID,
     secretAccessKey: AWS_SECRET_ACCESS_KEY
