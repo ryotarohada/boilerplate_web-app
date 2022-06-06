@@ -2,13 +2,13 @@
 
 Web App 開発用のテンプレート (front + api + db)
 
-フロント & サーバーサイドで TypeScript を採用。
+フロントエンド & バックエンド で TypeScript を採用。
 
 front: Next.js × Chakra UI
 
-api: Express × Docker
+api: Express on Docker
 
-DB: MySQL × Docker
+DB: DynamoDB Local on Docker
 
 ## 環境構築の手順
 

@@ -1,5 +1,3 @@
-# boilerplate_tsnode / db
+# boilerplate_web-app / backend / db
 
-Docker on MySQL
-
-接続情報は `boilerplate_tsnode`の`.env`に記載
+Docker on DynamoDB Local

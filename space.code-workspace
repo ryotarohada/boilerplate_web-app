@@ -12,9 +12,6 @@
     {
       "path": "backend/api"
     },
-    {
-      "path": "backend/db"
-    }
   ],
   "settings": {}
 }

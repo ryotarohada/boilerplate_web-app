@@ -1,10 +1,10 @@
-# boilerplate_tsnode
+# boilerplate_web-app / backend
 
 Node.js + TypeScript の開発環境テンプレート
 
 api サーバー + db サーバーを基本構成とする
 
-db は MySQL for Docker
+db は DynamoDB Local
 
 docker-compose で起動する
 

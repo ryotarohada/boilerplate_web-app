@@ -1,4 +1,4 @@
-# boilerplate_tsnode / api
+# boilerplate_web-app / backend / api
 
 Node.js + TypeScript を用いたAPIサーバー
 

@@ -1,4 +1,4 @@
-# Boilerplate_Next
+# boilerplate_web-app / frontend
 
 ## 概要
 
