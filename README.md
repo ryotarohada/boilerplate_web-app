@@ -26,18 +26,26 @@ DB: DynamoDB Local on Docker
 
 - volta (Node.js と yarn のバージョン管理の為、導入を推奨)
 
-### root
+### env
 
-1. `bash init.sh`を実行
+1. Google Driveから該当の`.env`をダウンロード
+
+2. `root/backend/api`へ`.env`を配置
 
 ### frontend
 
 1. `root/frontend`に移動
 
-2. `yarn dev`を実行して開発サーバー起動
+2. `yarn install`を実行してnpmパッケージをインストール
+
+3. `yarn dev`を実行して開発サーバー起動
 
 ### backend
 
-1. `root/backend`に移動
+1. `root/backend/api`に移動
 
-2. `docker-compose up -d --build`を実行
+2. `yarn install`を実行してnpmパッケージをインストール
+
+3. `root/backend`に移動
+
+4. `docker-compose up -d --build`を実行
