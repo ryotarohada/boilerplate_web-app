@@ -8,5 +8,6 @@ declare namespace NodeJS {
     readonly MYSQL_USER: string
     readonly MYSQL_ROOT_PASSWORD: string
     readonly MYSQL_PASSWORD: string
+    readonly MYSQL_DATABASE: string
   }
 }
