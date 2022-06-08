@@ -1,4 +1,4 @@
-import { database } from '@/server/models'
+import { DataBase } from '@/server/models'
 import { RequestHandler } from 'express'
 
 export const addUserController: RequestHandler = async (req, res) => {

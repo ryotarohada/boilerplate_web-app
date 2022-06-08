@@ -20,6 +20,7 @@ DB: DynamoDB Local on Docker
 - VSCode 各種 Plugin (`.vscode/extensions.json`の`recommendations`に記載)
 - Node.js v14.17.1
 - yarn v1.22.5
+- vercel CLI
 
 【任意】
 
