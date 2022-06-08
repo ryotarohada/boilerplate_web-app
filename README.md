@@ -8,7 +8,7 @@ front: Next.js × Chakra UI
 
 api: Express on Docker
 
-DB: DynamoDB Local on Docker
+DB: MySQL on Docker
 
 ## 環境構築の手順
 
